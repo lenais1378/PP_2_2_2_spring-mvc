@@ -11,12 +11,11 @@ import java.util.stream.Collectors;
 public class CarServiceImp implements CarService {
 
     @Override
-    public List<Car> getCars(List<Car> carsList, int count) {
-        carsList.stream().limit(count).collect(Collectors.toList());
-        return carsList;
+    public List<Car> getCars(int count) {
+        return carsList.stream().limit(count).collect(Collectors.toList());
     }
 
-    public List<Car> carsList = new ArrayList<>();
+    private static final List<Car> carsList = new ArrayList<>();
 
     {
         carsList.add(new Car("BMV", 11, "red"));
